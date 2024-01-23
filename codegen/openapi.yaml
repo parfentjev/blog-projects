@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  title: News Network API
+  version: 1.0.0
+paths:
+  /news:
+    get:
+      description: Get latest news feed
+      responses:
+        200:
+          description: List of latest news
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/FeedItem"
+        500:
+          description: Internal Server Error
+    post:
+      description: Create a new item
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                body:
+                  type: string
+                breaking:
+                  type: boolean
+              required:
+                - title
+                - body
+                - breaking
+      responses:
+        201:
+          description: Item is created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/FeedItem"
+        400:
+          description: Bad request
+        500:
+          description: Internal Server Error
+components:
+  schemas:
+    FeedItem:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        body:
+          type: string
+        breaking:
+          type: boolean
+      required:
+        - id
+        - title
+        - body
+        - breaking
