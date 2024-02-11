@@ -5,7 +5,7 @@ info:
 paths:
   /news:
     get:
-      description: Get latest news feed
+      description: Get the latest news feed
       responses:
         200:
           description: List of latest news
@@ -37,7 +37,7 @@ paths:
                 - breaking
       responses:
         201:
-          description: Item is created
+          description: Item created
           content:
             application/json:
               schema:
