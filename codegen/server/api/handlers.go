@@ -1,10 +1,10 @@
 package api
 
 import (
-	"math/rand"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/google/uuid"
 )
 
 type Feed struct {
@@ -26,7 +26,7 @@ func (f *Feed) PostNews(c *gin.Context) {
 		return
 	}
 
-	id := rand.Int()
+	id := uuid.NewString()
 	f.Items = append(f.Items, FeedItem{
 		Id:       id,
 		Title:    newItem.Title,
