@@ -13,8 +13,7 @@ npm i @openapitools/openapi-generator-cli
 ```shell
 npx openapi-generator-cli generate -i ../openapi.yaml \
     -g typescript-fetch \
-    -o src/api \
-    --additional-properties hooks=true
+    -o src/api
 ```
 
 ## Run
