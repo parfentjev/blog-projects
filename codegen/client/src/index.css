@@ -28,6 +28,10 @@ body {
   background-color: rgb(50, 54, 56);
 }
 
+.item.breaking {
+  border-color: rgb(136, 0, 0);
+}
+
 footer {
   text-align: center;
   color: rgb(113, 118, 120);

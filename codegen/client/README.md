@@ -4,7 +4,18 @@ Dummy web client written with TypeScript and React.
 
 ## Coegen
 
-...
+First, install the openapi-generator-cli tool:
+
+```shell
+npm i @openapitools/openapi-generator-cli
+```
+
+```shell
+npx openapi-generator-cli generate -i ../openapi.yaml \
+    -g typescript-fetch \
+    -o src/api \
+    --additional-properties hooks=true
+```
 
 ## Run
 
